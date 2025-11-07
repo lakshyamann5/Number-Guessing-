@@ -3,16 +3,19 @@ import random
 #updated, add instructions 
 ##################
 def play():
-    number = random.randint(1, 10)
+    level = input("Choose difficulty (easy/hard): ").strip().lower()
+    max_num = 10 if level == "easy" else 20
+
+    number = random.randint(1, max_num)
     attempts = 0
-    print("Guess the number (1–10)")
+    print(f"Guess the number (1–{max_num})")
 
     while True:
         try:
             guess = int(input("Your guess: "))
             attempts += 1
             if guess == number:
-                print(f"You got it in {attempts} tries!")
+                print(f"Correct in {attempts} tries!")
                 break
             elif guess < number:
                 print("Too low.")
