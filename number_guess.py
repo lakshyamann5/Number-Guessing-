@@ -1,5 +1,7 @@
 import random
-
+##################
+#updated, add instructions 
+##################
 def play():
     number = random.randint(1, 10)
     attempts = 0
